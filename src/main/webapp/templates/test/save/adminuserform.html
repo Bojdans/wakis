@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <title>test</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<div class = "container mt-5 mb-5">
+  <h1>Тест добавления админа</h1>
+  <form action="/admin_users/save" method="post" th:object="${adminUser}">
+    <input type="text" name="login" placeholder="введите login" class="form-control">
+    <input type="text" name="password" placeholder="введите password" class="form-control">
+    <input type="text" name="description" placeholder="введите description" class="form-control">
+    <input type="text" name="permissions" placeholder="введите permissions" class="form-control">
+    <button type="submit" class="btn btn-success m-4" value="submit">Добавить сущность</button>
+  </form>
+</div>
+</body>
+</html>
