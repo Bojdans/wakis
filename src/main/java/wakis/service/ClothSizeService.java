@@ -68,6 +68,4 @@ public class ClothSizeService {
             throw new ClothSizeException("поле кол-ва не может быть пустым");
         }
     }
-    //TODO: all checks
-    // done
 }

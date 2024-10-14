@@ -82,7 +82,4 @@ public class OrderClothService {
             throw new OrderClothException("telegram username должен быть от 5 до 32 символов и начинаться с @");
         }
     }
-    //TODO:checks
-    // done
-
 }

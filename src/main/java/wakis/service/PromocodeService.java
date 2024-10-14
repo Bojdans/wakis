@@ -76,6 +76,4 @@ public class PromocodeService {
             throw new PromocodeException("описание должно быть меньше 50 символов");
         }
     }
-    //TODO:checks
-    // done
 }

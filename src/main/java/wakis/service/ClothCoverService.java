@@ -91,6 +91,4 @@ public class ClothCoverService {
         }
 
     }
-    //TODO:checks
-    // done
 }

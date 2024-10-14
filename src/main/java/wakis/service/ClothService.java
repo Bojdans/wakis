@@ -118,6 +118,4 @@ public class ClothService {
             throw new ClothException("цена без скидки не может быть меньше 0");
         }
     }
-    //TODO:checks
-    // done
 }

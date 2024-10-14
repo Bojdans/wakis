@@ -92,6 +92,4 @@ public class AdminUserService {
             throw new AdminUserException("поле прав не может быть пустым");
         }
     }
-    //TODO:checks
-    // done
 }
