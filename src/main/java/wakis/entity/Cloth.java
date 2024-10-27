@@ -35,17 +35,17 @@ public class Cloth {
     private List<String> images;
     @Column(name = "cost")
     private Long cost;
-    @Column(name = "cost_without_discount")
-    private Long costWithoutDiscount;
+    @Column(name = "fake_cost")
+    private Long fakeCost;
 
-    public Cloth(String name, String description, List<ClothSize> clothSizes, ClothType type, List<String> images, Long cost, Long costWithoutDiscount) {
+    public Cloth(String name, String description, List<ClothSize> clothSizes, ClothType type, List<String> images, Long cost, Long fakeCost) {
         this.name = name;
         this.description = description;
         this.clothSizes = clothSizes;
         this.type = type;
         this.images = images;
         this.cost = cost;
-        this.costWithoutDiscount = costWithoutDiscount;
+        this.fakeCost = fakeCost;
     }
 
 }

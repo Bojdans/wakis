@@ -1,13 +1,9 @@
 package wakis.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import wakis.entity.Cloth;
-import wakis.entity.OrderCloth;
 import wakis.exceptions.ClothException;
-import wakis.exceptions.OrderClothException;
 import wakis.repository.ClothRepository;
-import wakis.repository.PromocodeRepository;
 
 import java.util.List;
 
@@ -55,7 +51,7 @@ public class ClothService {
         isRightName(cloth);
         isRightType(cloth);
         isRightSizes(cloth);
-        isRightCostWithoutDiscount(cloth);
+        isRightFakeCost(cloth);
     }
     private void isRightName(Cloth cloth) throws ClothException {
         if(cloth.getName() == null){
@@ -113,8 +109,8 @@ public class ClothService {
      *
      * проверка цены без скидки(которая перечёркивается типо какая раньше была)
      */
-    private void isRightCostWithoutDiscount(Cloth cloth) throws ClothException {
-        if(cloth.getCostWithoutDiscount() < 0){
+    private void isRightFakeCost(Cloth cloth) throws ClothException {
+        if(cloth.getFakeCost() < 0){
             throw new ClothException("цена без скидки не может быть меньше 0");
         }
     }

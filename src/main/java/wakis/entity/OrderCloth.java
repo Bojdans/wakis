@@ -2,6 +2,7 @@ package wakis.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import wakis.entity.covers.ClothCover;
 import wakis.enums.OrderStatus;
 
@@ -9,6 +10,7 @@ import java.util.List;
 
 @Data
 @Entity
+@NoArgsConstructor
 @Table(name = "order_cloth")
 public class OrderCloth {
     @Id
@@ -41,9 +43,6 @@ public class OrderCloth {
             inverseJoinColumns = @JoinColumn(name = "cloth_cover_id")
     )
     private List<ClothCover> clothCovers;
-    public OrderCloth() {
-        totalCost = countTotalCost();
-    }
     public OrderCloth(String email, String phoneNumber, String telegramUsername, String city, String orderClothPickupPoint, Promocode promocode, OrderStatus orderStatus, List<ClothCover> clothCovers) {
         this.email = email;
         this.phoneNumber = phoneNumber;
@@ -53,7 +52,6 @@ public class OrderCloth {
         this.promocode = promocode;
         this.orderStatus = orderStatus;
         this.clothCovers = clothCovers;
-        totalCost = countTotalCost();
     }
     public OrderCloth(String email, String phoneNumber, String telegramUsername, String city, String orderClothPickupPoint, OrderStatus orderStatus, List<ClothCover> clothCovers) {
         this.email = email;
@@ -63,20 +61,5 @@ public class OrderCloth {
         this.orderClothPickupPoint = orderClothPickupPoint;
         this.orderStatus = orderStatus;
         this.clothCovers = clothCovers;
-        countTotalCost();
-    }
-    /**
-     * считает стоимость всех шмоток в заказе и применяет скидку
-     * @return totalCost
-     */
-    private long countTotalCost(){
-        long totalCost = 0;
-        if(clothCovers == null) return totalCost;
-        for (ClothCover clothCover : clothCovers) {
-            totalCost += clothCover.getCloth().getCost();
-        }
-
-        totalCost = totalCost - (totalCost * getPromocode().getDiscount()/100);
-        return  totalCost;
     }
 }

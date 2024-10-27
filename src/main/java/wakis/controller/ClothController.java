@@ -1,8 +1,9 @@
 package wakis.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import wakis.DTO.ClothPreviewDTO;
 import wakis.entity.Cloth;
 import wakis.exceptions.ClothException;
 import wakis.service.ClothService;
@@ -26,9 +27,14 @@ public class ClothController {
     public void save(@RequestBody Cloth cloth) throws ClothException {
         clothService.saveCloth(cloth);
     }
-
     @PostMapping(value = "/update")
     public void update(@RequestBody Cloth cloth) throws ClothException {
         clothService.updateCloth(cloth);
+    }
+    @GetMapping("/getAllForPreview")
+    public List<ClothPreviewDTO> getAllForPreview() throws ClothException {
+        return clothService.getAll().stream()
+                .map(x -> new ClothPreviewDTO(x.getName(),x.getImages(),x.getCost(),x.getFakeCost()))
+                .toList();
     }
 }
