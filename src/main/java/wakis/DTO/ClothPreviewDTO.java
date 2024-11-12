@@ -11,5 +11,5 @@ public class ClothPreviewDTO {
     private List<String> images;
     private long cost;
     private long fakeCost;
-
+    private String description;
 }

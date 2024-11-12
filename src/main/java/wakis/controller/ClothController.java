@@ -2,12 +2,11 @@ package wakis.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 import wakis.DTO.ClothPreviewDTO;
 import wakis.entity.Cloth;
 import wakis.exceptions.ClothException;
 import wakis.service.ClothService;
-
+import wakis.service.FileService;
 import java.util.List;
 
 @RestController
@@ -15,6 +14,8 @@ import java.util.List;
 public class ClothController {
     @Autowired
     private ClothService clothService;
+    @Autowired
+    private FileService fileService;
     @GetMapping
     public List<Cloth> getAll() {
         return clothService.getAll();
@@ -34,7 +35,7 @@ public class ClothController {
     @GetMapping("/getAllForPreview")
     public List<ClothPreviewDTO> getAllForPreview() throws ClothException {
         return clothService.getAll().stream()
-                .map(x -> new ClothPreviewDTO(x.getName(),x.getImages(),x.getCost(),x.getFakeCost()))
+                .map(x -> new ClothPreviewDTO(x.getName(),fileService.getImages(x.getImages()),x.getCost(),x.getFakeCost(),x.getDescription()))
                 .toList();
     }
 }
