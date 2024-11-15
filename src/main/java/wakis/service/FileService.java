@@ -4,15 +4,30 @@ import org.springframework.stereotype.Service;
 import wakis.entity.covers.ImageWakis;
 
 import java.io.*;
+import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 import java.util.Scanner;
 @Service
 public class FileService {
-
-
+    public List<String> getAllImagesForPreview(){
+        Path directoryPath = Paths.get("src/main/webapp/static/images");
+        List<String> images = new ArrayList<>();
+        try (DirectoryStream<Path> stream = Files.newDirectoryStream(directoryPath)) {
+            for (Path entry : stream) {
+                if (Files.isRegularFile(entry)) {
+                    images.add(Base64.getEncoder().encodeToString(Files.readAllBytes(entry)));
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Ошибка при чтении директории: " + e.getMessage());
+        }
+        return images;
+    }
     public List<String> getImages(List<String> images){
         try {
             List<String> imagesCodes = images.stream().map(image -> {
@@ -27,7 +42,6 @@ public class FileService {
             return List.of("Ошибка: " + e.getMessage());
         }
     }
-
     public String getTextFromFile(String pathFile) throws FileNotFoundException {
         Scanner scanner = new Scanner(new File(System.getProperty("user.dir"),"src/main/resources/CMS/" + pathFile + ".txt"));
         String fileContent = "";

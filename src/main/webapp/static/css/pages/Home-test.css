@@ -1,0 +1,120 @@
+*{
+    box-sizing: border-box;
+    display: block;
+
+}
+header{
+    padding-top: 40px;
+    position: fixed;
+    width: 100vw;
+    height: 189px;
+    top: -10px;
+    background: #ffffff;
+}
+
+
+.social-media{
+    display: inline-block;
+    width: 35px;
+    height: 25px;
+}
+#telegram-href > svg{
+    width: 35px;
+    height: 25px
+
+}
+#vk-href-href > svg{
+    width: 35px;
+    height: 25px
+
+}
+#social {
+    position: absolute;
+    top: 60px;
+    left: 70px;
+    height: 30px;
+    display: flex;
+    gap: 20px;
+}
+#shop-cart-button {
+    position: absolute;
+    right: 80px;
+    top: 60px;
+    border: none;
+    background: none;
+    display: block;
+    height: 35px;
+    width: 35px;
+}
+#cloth-count{
+    position: absolute;
+    top: 10px;
+    right: 11px;
+    font-size: 20px;
+}
+#shop-cart-button:hover {
+    cursor: pointer;
+}
+#shop-name{
+    position: absolute;
+    top: 54px;
+    left: calc(50vw - 20px);
+    font: normal 40px "High Tower Text" ;
+}
+#shop-logo{
+    position: absolute;
+    left: calc(50vw - 150px);
+    top: 30px;
+    width: 87px;
+    height: 87px;
+}
+#cloth-select{
+    position: absolute;
+    height: 49px;
+    top: 140px;
+    width: 100vw;
+    padding: 11px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    border-top: var(--gray) solid 1px;
+    border-bottom: var(--gray) solid 1px;
+    font: normal 20px "Segoe UI Semibold" ;
+}
+#cloth-select > *{
+    text-decoration: none;
+    color: var(--gray);
+    transition: color 20ms ease-in-out;
+}
+#cloth-select > *:hover{
+    color: var(--black);
+}
+
+@media (max-width: 720px) {
+    .social-media{
+        display: none;
+    }
+    #shop-name{
+        left: calc(50vw - 48px);
+        top: 140px;
+        font: normal 30px "High Tower Text" ;
+    }
+    #shop-logo{
+        left: calc(50vw - 30px);
+        top: 60px;
+        width: 87px;
+    }
+    #shop-logo > svg{
+        width: 70px;
+    }
+    #cloth-select{
+        display: none;
+    }
+    header{
+        border-bottom: var(--gray) solid 1px;
+    }
+    #shop-cart-button{
+        right: 20px;
+        top: 70px;
+    }
+}

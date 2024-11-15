@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAKIS Shop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        #social {
+            display: flex;
+            gap: 20px;
+        }
+
+        .icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        #shop-logo {
+            width: 80px;
+            height: 80px;
+        }
+
+        #shop-name {
+            font-size: 28px;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        #cart {
+            position: relative;
+            width: 32px;
+            height: 32px;
+        }
+
+        #cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #ff0000;
+            color: #fff;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <!-- Социальные иконки -->
+    <div id="social">
+        <!-- Иконка VK -->
+        <a href="https://vk.com/wakisofficial" target="_blank">
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.95 12.59c-.22-.34-.44-.67-.69-1-.15-.2-.18-.31 0-.51.42-.51.85-1.01 1.27-1.52.35-.42.34-.64-.16-.75-1.22-.28-2.38-.25-3.54.05-.32.08-.5.24-.48.57.02.42-.01.83-.06 1.24-.08.65-.28.77-.92.51-1.55-.65-2.82-1.63-3.85-2.9-.28-.34-.57-.68-.89-1-.18-.18-.37-.22-.63-.15-.44.11-.87.25-1.29.42-.15.06-.28.16-.21.34.72 1.81 1.78 3.34 3.15 4.64 1.22 1.1 2.6 1.92 4.25 2.17.88.14 1.24-.11 1.37-.97.04-.29.13-.58.2-.87.06-.26.19-.36.47-.3 1.25.24 2.45.18 3.6-.39.31-.15.34-.27.19-.57z"/>
+            </svg>
+        </a>
+        <!-- Иконка Telegram -->
+        <a href="https://t.me/wakisofficial" target="_blank">
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M12 2.04c-5.5 0-10 4.48-10 10 0 5.5 4.5 10 10 10 5.52 0 10-4.5 10-10s-4.48-10-10-10zm3.78 7.5-1.58 7.06c-.12.53-.43.66-.87.41l-2.43-1.79-1.17.93c-.13.1-.24.18-.49.18l.18-2.55 4.63-4.19c.2-.18-.04-.28-.31-.1l-5.72 3.6-2.46-.77c-.53-.17-.54-.53.12-.78l9.56-3.67c.44-.15.84.1.7.77z"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Логотип и название магазина -->
+    <a id="shop-logo" href="Home.html">
+        <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50" fill="#000" />
+            <text x="50" y="55" font-size="12" fill="#fff" text-anchor="middle">WAKIS</text>
+        </svg>
+    </a>
+    <span id="shop-name">WAKIS</span>
+
+    <!-- Меню навигации -->
+    <nav>
+        <a href="#">T-Shirts</a>
+        <a href="#">Hoodie</a>
+        <a href="#">Pants</a>
+        <a href="#">Jackets</a>
+        <a href="#">Shirt</a>
+        <a href="#">Accessory</a>
+        <a href="#">Other</a>
+    </nav>
+
+    <!-- Корзина -->
+    <div id="cart">
+        <svg class="icon" viewBox="0 0 24 24">
+            <path d="M7 4h14l-1.5 13H8.5L7 4zM1 4h4l1 16h12l1-16h4"/>
+        </svg>
+        <div id="cart-count">9</div>
+    </div>
+</header>
+</body>
+</html>

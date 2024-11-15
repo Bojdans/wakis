@@ -16,7 +16,6 @@ public class OrderClothService {
     public OrderClothService(OrderClothRepository orderClothRepository) {
         this.orderClothRepository = orderClothRepository;
     }
-
     /**
      * CRUD ↓
      */
@@ -24,7 +23,6 @@ public class OrderClothService {
         isRightData(orderCloth);
         orderClothRepository.saveAndFlush(orderCloth);
     }
-
     public void delete(long id) {
         orderClothRepository.deleteById(id);
     }
@@ -43,7 +41,7 @@ public class OrderClothService {
     }
 
     /**
-     * все проверки ↓
+     * Все проверки ↓
      */
     private void isRightData(OrderCloth orderCloth) throws OrderClothException {
         isRightPhoneNumber(orderCloth);
@@ -86,7 +84,7 @@ public class OrderClothService {
         }
     }
     /**
-     * считает стоимость всех шмоток в заказе и применяет скидку
+     * Считает стоимость всех шмоток в заказе и применяет скидку
      *
      * @return totalCost
      */

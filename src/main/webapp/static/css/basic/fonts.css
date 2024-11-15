@@ -1,0 +1,42 @@
+@font-face{
+    font-family: 'Segoe UI';
+    src: url('../../fonts/Segoe UI.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face{
+    font-family: 'Leelawadee';
+    src: url('../../fonts/Leelawadee.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face{
+    font-family: 'High Tower Text';
+    src: url('../../fonts/High Tower Text Regular.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+/*@font-face{*/
+/*    font-family: 'Segoe UI Semibold';*/
+/*    src: url('../../fonts/ofont.ru_Segoe UI Semibold.ttf');*/
+/*    font-style: normal;*/
+/*    font-weight: normal;*/
+/*}*/
+@font-face{
+    font-family: 'Stolzl Book';
+    src: url('../../fonts/stolzl_book.otf');
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face{
+    font-family: 'Stolzl Light';
+    src: url('../../fonts/stolzl_light.otf');
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face{
+    font-family: 'Stolzl Thin';
+    src: url('../../fonts/stolzl_thin.otf');
+    font-style: normal;
+    font-weight: normal;
+}

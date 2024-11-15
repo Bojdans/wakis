@@ -1,0 +1,275 @@
+/*-----------------------header-----------------------------*/
+body{
+    display: inline-block;
+}
+header{
+    width: 100vw;
+    height: 190px;
+    background-color: var(--white);
+    position: fixed;
+    z-index: 3;
+}
+#head-wakis{
+    padding: 20px 40px 20px 40px;
+    height: 140px;
+}
+#cloth-select{
+    border-top: var(--gray) solid 1px;
+    border-bottom: var(--gray) solid 1px;
+    height: 50px;
+    top: 140px;
+    width: 100vw;
+    padding: 11px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    border-top: var(--gray) solid 1px;
+    border-bottom: var(--gray) solid 1px;
+    font: normal 20px "Segoe UI Semibold" ;
+}
+#cloth-select > *{
+    color: var(--gray);
+}
+#cloth-select > *:hover{
+    color: var(--black);
+}
+
+#social{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 90px;
+    height: 40px;
+}
+.social-media  > svg{
+    width: 40px;
+    height: 40px;
+}
+#telegram-href > svg{
+    margin-top: 6px;
+    height: 28px;
+}
+#shop-logo > svg{
+    width: 87px;
+}
+#shop-identity{
+    display: flex;
+    position: absolute;
+    left: calc(50vw - 100px);
+    align-content: center;
+    justify-content: center;
+    top: 25px;
+}
+#shop-name{
+    font: normal 40px "High Tower Text" ;
+    padding: 20px;
+}
+#shop-cart-button{
+    position: absolute;
+    right: 60px;
+    top: 54px;
+    width: 35px;
+}
+#cloth-count{
+    position: absolute;
+    font-size: 23px;
+    right: 10px;
+    top: 9px;
+}
+#shop-cart-button:hover{
+    cursor: pointer;
+}
+
+#menu{
+    display: none;
+}
+
+
+
+
+@media(max-width: 720px) {
+    #social{
+        display: none;
+    }
+    #cloth-select{
+        display: none;
+    }
+    #shop-identity{
+        display: flex;
+        height: 130px;
+        width: 70px;
+        justify-content: center;
+        flex-flow: column;
+        left: calc(50vw - 33px);
+        top: 15px;
+        padding: 0;
+    }
+    #shop-logo > svg{
+        width: 70px;
+    }
+    #shop-logo{
+        position: absolute;
+        top: 10px;
+    }
+    #shop-name{
+        position: absolute;
+        font: normal 20px "High Tower Text" ;
+        padding: 0;
+        top: 90px;
+    }
+    #head-wakis{
+        border-bottom: var(--gray) solid 1px;
+        height: 160px;
+    }
+    #shop-cart-button{
+        position: absolute;
+        width: 35px;
+        right: 15px;
+    }
+    #cloth-count{
+        position: absolute;
+        font-size: 18px;
+        left: 14px;
+        top: 13px;
+    }
+    #menu{
+        position: absolute;
+        display: inline-block;
+        top: 65px;
+        left: 15px
+    }
+}
+
+
+
+
+
+/*-----------------------marquee-----------------------------*/
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+h1,
+p {
+    margin-bottom: 20px;
+}
+
+.wrap-marquee {
+    position: absolute;
+    max-width: 100%;
+    margin: auto;
+
+    text-align: center;
+    background-color: black;
+    height: 40px;
+    top:220px;
+
+}
+
+.items-wrap {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: 20px;
+}
+
+.items-wrap:before,
+.items-wrap:after {
+    content: "";
+    height: 100%;
+    top: 0;
+    width: 10%;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.items-wrap:before {
+    left: 0;
+    height: 40px;
+    background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0) 100%
+    );
+
+}
+
+.items-wrap:after {
+    right: 0;
+    height: 40px;
+    background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 1) 100%
+    );
+}
+
+.items {
+    display: flex;
+    gap: 100px;
+    counter-reset: item;
+    justify-content: flex-start;
+    min-width: 100%;
+}
+
+.item {
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    color: white;
+    font-family: "High Tower Text";
+    font-weight: lighter;
+}
+
+.marquee {
+    animation: scroll 20s linear infinite;
+}
+
+.reverce {
+    animation-direction: reverse;
+}
+
+.items-wrap:hover .marquee {
+    animation-play-state: running;
+}
+
+.perfscan {
+    margin: 20px 0;
+    text-align: center;
+    bottom: 0;
+    background: #fff;
+    padding: 5px;
+}
+
+.perfscan hr {
+    border: solid #999;
+    border-width: 1px 0 0 0;
+    max-width: 50%;
+    margin: 0 auto 20px;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/*-----------------------main-----------------------------*/
+
+
+
+
+
+/*-----------------------footer-----------------------------*/

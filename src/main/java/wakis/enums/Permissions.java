@@ -1,5 +1,5 @@
 package wakis.enums;
 
 public enum Permissions {
-    ADMIN,CONTENTMANAGER
+    ADMIN,CONTENTMANAGER,MANAGER
 }
